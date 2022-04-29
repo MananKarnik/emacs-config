@@ -162,14 +162,6 @@
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-;(use-package evil-magit
-;  :after magit)
-
-
-
-
-
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
