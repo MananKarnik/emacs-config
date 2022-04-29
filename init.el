@@ -100,7 +100,7 @@
 
 (use-package general
   :config
-  (general-create-definer rune/leader-keys
+  (general-create-definer rune/leader-keys 
     :keymaps '(normal insert visual emacs)
     :prefix "SPC"
     :global-prefix "C-SPC")
@@ -108,10 +108,7 @@
   (rune/leader-keys
     "t"  '(:ignore t :which-key "toggles")
     "tt" '(counsel-load-theme :which-key "choose theme")))
-
-(general-define-key
- "C-M-j" 'counsel-switch-buffer)
-
+  
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -144,7 +141,34 @@
   ("f" nil "finished" :exit t))
 
 (rune/leader-keys
-  "ts" '(hydra-text-scale/body :which-key "scale text"))
+  "s" '(hydra-text-scale/body :which-key "scale text"))
+
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  ;; NOTE: Set this to the folder where you keep your Git repos!
+  (when (file-directory-p "~/Projects")
+    (setq projectile-project-search-path '("~/Projects")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+(use-package counsel-projectile
+  :config (counsel-projectile-mode))
+
+(use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+;(use-package evil-magit
+;  :after magit)
+
+
+
+
+
 
 
 (custom-set-variables
@@ -153,7 +177,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
+   '(evil-magit magit counsel-projectile projectile hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
