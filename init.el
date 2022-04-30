@@ -6,7 +6,7 @@
 (set-fringe-mode 10)        ; Give some breathing room
 (menu-bar-mode -1)          ; Disable the menu bar
 
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 280)
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 160)
 
 ;; Initialize package sources
 (require 'package)
@@ -25,6 +25,10 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+;; Discord integration for emacs
+(require 'elcord)
+(elcord-mode)
 
 ;; Ivy, Counsel and Swiper
 (use-package counsel
@@ -169,7 +173,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(evil-magit magit counsel-projectile projectile hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
+   '(elcord evil-magit magit counsel-projectile projectile hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
