@@ -45,8 +45,13 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package fira-code-mode
+  :hook (prog-mode . fira-code-mode))
+ 
+
 ;; Discord integration for emacs
-(use-package elcord)
+(use-package elcord
+  :init (elcord-mode 1))
 
 ;; Multiple Cursors
 (use-package multiple-cursors
