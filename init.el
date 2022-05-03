@@ -8,6 +8,9 @@
 
 (set-face-attribute 'default nil :font "Fira Code Retina" :height 160)
 
+;; overwrite selected text
+(delete-selection-mode t)
+
 ;; Kill term buffer on exit
 (defun oleh-term-exec-hook ()
   (let* ((buff (current-buffer))
