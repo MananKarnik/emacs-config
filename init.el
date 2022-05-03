@@ -6,7 +6,7 @@
 (set-fringe-mode 10)        ; Give some breathing room
 (menu-bar-mode -1)          ; Disable the menu bar
 
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 160)
+(set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 160)
 
 ;; overwrite selected text
 (delete-selection-mode t)
@@ -203,7 +203,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(multiple-cursors elcord evil-magit magit counsel-projectile projectile hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
+   '(fira-code-mode multiple-cursors elcord evil-magit magit counsel-projectile projectile hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
