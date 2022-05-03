@@ -46,8 +46,19 @@
 (setq use-package-always-ensure t)
 
 ;; Discord integration for emacs
-(require 'elcord)
-(elcord-mode)
+(use-package elcord)
+
+;; Multiple Cursors
+(use-package multiple-cursors
+  :ensure t
+  :bind (("H-SPC" . set-rectangular-region-anchor)
+         ("C-M-SPC" . set-rectangular-region-anchor)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C->" . mc/mark-all-like-this)
+         ("C-c C-SPC" . mc/edit-lines)
+         ))
+
 
 ;; Ivy, Counsel and Swiper
 (use-package counsel
@@ -192,7 +203,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(elcord evil-magit magit counsel-projectile projectile hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
+   '(multiple-cursors elcord evil-magit magit counsel-projectile projectile hydra evil-collection evil general helpful ivy-rich all-the-icons-install-fonts which-key rainbow-delimiters doom-themes counsel doom-modeline ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
