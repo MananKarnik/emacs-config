@@ -11,6 +11,9 @@
 ;; overwrite selected text
 (delete-selection-mode t)
 
+;; Default tab indent width
+(setq-default tab-width 4)
+
 ;; Kill term buffer on exit
 (defun oleh-term-exec-hook ()
   (let* ((buff (current-buffer))
