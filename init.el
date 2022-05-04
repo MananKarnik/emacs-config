@@ -13,6 +13,7 @@
 
 ;; Default tab indent width
 (setq-default tab-width 4)
+(setq-default c-basic-offset 4)
 
 ;; Kill term buffer on exit
 (defun oleh-term-exec-hook ()
