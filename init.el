@@ -6,7 +6,7 @@
 (set-fringe-mode 10)        ; Give some breathing room
 (menu-bar-mode -1)          ; Disable the menu bar
 
-(set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 160)
+(set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 200)
 
 ;; overwrite selected text
 (delete-selection-mode t)
