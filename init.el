@@ -12,6 +12,7 @@
 (delete-selection-mode t)
 
 ;; Default tab indent width
+(setq-default indent-tabs-mode t)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 
