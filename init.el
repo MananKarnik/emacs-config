@@ -11,6 +11,10 @@
 ;; overwrite selected text
 (delete-selection-mode t)
 
+;; Custom key binds
+(global-set-key (kbd "C-c C-c") 'compile)
+(global-set-key (kbd "C-c m") 'magit)
+
 ;; Default tab indent width
 (setq-default indent-tabs-mode t)
 (setq-default tab-width 4)
